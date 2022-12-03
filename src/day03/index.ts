@@ -18,6 +18,7 @@ const part1 = (rawInput: string) => {
   const lookup = createAlphabetLookup();
 
   const halfedArray: string[][] = [];
+  let counter = 0;
 
   dummyData.forEach((el) => {
     const middle = Math.floor(el.length / 2);
@@ -28,9 +29,11 @@ const part1 = (rawInput: string) => {
       if (index < middle) firstHalf += el[index];
       else secondHalf += el[index];
     }
-
-    console.log(secondHalf);
+    counter++;
+    halfedArray[counter].push(firstHalf);
+    halfedArray[counter].push(secondHalf);
   });
+  console.log(halfedArray);
 
   // console.log(halfedArray);
 
