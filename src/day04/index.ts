@@ -103,8 +103,8 @@ const part1 = (rawInput: string) => {
   const input = parseInput(rawInput);
   const splittedInput = input.split("\n");
   const allSections = getAllSections(splittedInput);
-  // console.log(allSections);
   const allContainments = calcAssignmentContainments(allSections);
+
   return allContainments;
 };
 
