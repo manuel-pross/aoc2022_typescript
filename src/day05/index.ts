@@ -3,10 +3,10 @@ import run from "aocrunner";
 const parseInput = (rawInput: string) => rawInput;
 
 const dummyData = [
-  "    [D]    ",
-  "[N] [C]    ",
-  "[Z] [M] [P]",
-  " 1   2   3 ",
+  "    [D]        ",
+  "[N] [C]        ",
+  "[Z] [M] [P] [H]",
+  " 1   2   3   4 ",
   "",
   "move 1 from 2 to 1",
   "move 3 from 1 to 3",
@@ -31,12 +31,16 @@ function createEmptyStorageMap(input: string[]) {
 }
 
 function addItemsToStorage(input: string[]) {
-  console.log(input);
+  const regExp = /\[([^)]+)\]/;
   for (const el of input) {
-    const matches = el.match(/\[(.*?)\]/);
-    console.log(matches);
+    const match = regExp.exec(el)?.input;
+    // console.log(matches);
+    // regex for chars /[a-z]/i
+    if (match) {
+      console.log(match);
+    }
+
     if (el === "" || el.includes("1")) break;
-    // console.log(el);
   }
 }
 
